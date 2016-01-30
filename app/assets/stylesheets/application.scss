@@ -1,0 +1,11 @@
+// Bootstrap
+$navbar-height: 75px;
+$navbar-default-border: 0px;
+$navbar-margin-bottom: 0px;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Local
+@import "layout";
+@import "home";

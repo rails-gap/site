@@ -1,0 +1,49 @@
+<div class="container">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to(main_app.root_path, class: 'navbar-brand') do %>
+      <span>
+        <%= image_tag('logo.png', alt: 'logo', class: 'logo') %> RAILS-GAP</span>
+      <% end %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li><%= link_to('Onboarding', main_app.rop_path) %></li>
+          <li><%= link_to('Screencasts', main_app.root_path) %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://www.wearegap.com">About GAP</a></li>
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+              aria-haspopup="true" aria-expanded="false">
+              <%= current_user.name %> <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">My Profile</a></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to('Sign Out', main_app.destroy_user_session_path, method: :delete) %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to('Sign In', user_omniauth_authorize_path(:google_oauth2)) %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+<hr class="line" />

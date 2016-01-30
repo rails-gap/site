@@ -1,0 +1,14 @@
+config/database.yml
+config/omniauth.yml
+
+coverage/*
+log/*
+tmp/*
+
+## generic files to ignore
+*~
+*.DS_Store
+*.swp
+*.out
+dump.rdb
+
