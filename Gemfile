@@ -32,7 +32,8 @@ gem 'omniauth-google-oauth2'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # Engines
-gem 'rop', git: 'github.com/rails-gap/rop.git'
+gem 'rop', git: 'git@github.com:rails-gap/rop.git', branch: 'develop'
+gem 'screencasts', git: 'git@github.com:rails-gap/screencasts.git', branch: 'develop'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -48,6 +49,9 @@ group :development, :test do
   gem 'byebug'
   gem 'brakeman'
   gem 'rspec-rails', '~> 3.0'
+
+  # Debugging and code navigation gem, call it by using binding.pry
+  gem 'pry'
 end
 
 group :development do
