@@ -24,7 +24,7 @@
           <ul class="nav navbar-nav">
             <% if user_signed_in? %>
               <li><%= link_to('Onboarding', main_app.rop_path) %></li>
-              <li><%= link_to('Screencasts', main_app.root_path) %></li>
+              <li><%= link_to('Screencasts', main_app.screencasts_path) %></li>
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
