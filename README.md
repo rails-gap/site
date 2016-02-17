@@ -1,6 +1,6 @@
 # Rails GAP
-Base Project\
-Ruby: ruby-2.3.0 \
+Base Project <br>
+Ruby: ruby-2.3.0 <br>
 Rails: Rails 4.2.5
 
 ## How to run the base project
@@ -11,7 +11,7 @@ $ rails s
 ## How to create new engines
 1. Create an engine in the specific repo.
 ```
-$ rails plugin new <name> --mountable --skip-test-unit --dummy-path=spec/dummy
+$ rails plugin new <name> --mountable -T --dummy-path=spec/dummy
 ```
 2. Update required attributes on <name>.gemspec.
 3. Update the application layout to inherit the base project layout.
@@ -47,7 +47,7 @@ end
 ```
 $ bundle install
 ```
-Note1: For local development point to path: '../<name>' instead of the git link.\
+Note1: For local development point to path: '../<name>' instead of the git link. <br>
 Note2: Do not run bundle update or all the gems will be updated.
 
 2. Mount the engine in the routes file:
