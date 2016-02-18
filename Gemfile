@@ -35,6 +35,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rop', git: 'git@github.com:rails-gap/rop.git', branch: 'develop'
 gem 'screencasts', git: 'git@github.com:rails-gap/screencasts.git', branch: 'develop'
 
+# Utils
+gem "breadcrumbs_on_rails"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

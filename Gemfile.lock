@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:rails-gap/rop.git
-  revision: 6f550f68c68ef4b0e0b8f31a5df2d273670c081b
+  revision: f97bdedaf5adee2d7db8ac201b70a1104b0cc514
   branch: develop
   specs:
     rop (0.0.1)
@@ -75,6 +75,7 @@ GEM
       sass (~> 3.0)
       slim (>= 1.3.6, < 4.0)
       terminal-table (~> 1.4)
+    breadcrumbs_on_rails (2.3.1)
     builder (3.2.2)
     byebug (8.2.1)
     coderay (1.1.0)
@@ -256,6 +257,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   brakeman
+  breadcrumbs_on_rails
   byebug
   coffee-rails (~> 4.1.0)
   devise
