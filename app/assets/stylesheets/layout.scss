@@ -42,3 +42,31 @@ footer.footer {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+header.top {
+  text-align: center;
+  color: white;
+  background: url('bg_gradient_small.png');
+  background-size: cover;
+}
+
+header.top .container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+header.top img {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+header.top .intro-text .title {
+  display: block;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+header.top .intro-text .description {
+  font-size: 20px;
+  font-weight: 300;
+}
