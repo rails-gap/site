@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:rails-gap/rop.git
-  revision: f97bdedaf5adee2d7db8ac201b70a1104b0cc514
+  revision: e1b13605207eef9b33b9b9203967633eb2ecadf0
   branch: develop
   specs:
     rop (0.0.1)
