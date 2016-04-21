@@ -3,7 +3,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+        <div class="navbar-header" data-no-turbolink>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
             data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -14,17 +14,17 @@
           <%= link_to(main_app.root_path, class: 'navbar-brand') do %>
             <span class="logo-text">
               <%= image_tag('logo.png', alt: 'logo', class: 'logo') %>
-              RAILS-<span class="logo-red">GAP</span>
+              GAP-<span class="logo-red">SHARE</span>
             </span>
           <% end %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" data-no-turbolink>
             <% if user_signed_in? %>
-              <li><%= link_to('Onboarding', main_app.rop_path) %></li>
-              <li><%= link_to('Screencasts', main_app.screencasts_path) %></li>
+              <li><%= link_to('Guides', guides.root_path) %></li>
+              <li><%= link_to('Videos', videos.root_path) %></li>
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -36,7 +36,7 @@
                   <%= current_user.name %> <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">My Profile</a></li>
+                  <li><%= link_to('My Profile', main_app.profile_path(current_user)) %></li>
                   <li role="separator" class="divider"></li>
                   <li>
                     <%= link_to('Sign Out', main_app.destroy_user_session_path, method: :delete) %>

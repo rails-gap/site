@@ -21,6 +21,8 @@ gem 'rails-jquery-autocomplete'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -39,7 +41,7 @@ gem 'rop', git: 'git@github.com:rails-gap/rop.git', branch: 'develop'
 gem 'screencasts', git: 'git@github.com:rails-gap/screencasts.git', branch: 'develop'
 
 # Utils
-gem "breadcrumbs_on_rails"
+gem 'breadcrumbs_on_rails'
 gem 'will_paginate'
 
 # Use ActiveModel has_secure_password
@@ -52,20 +54,21 @@ gem 'will_paginate'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'brakeman'
   gem 'rspec-rails', '~> 3.0'
-
-  # Debugging and code navigation gem, call it by using binding.pry
   gem 'pry'
+  gem 'priscilla'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rubocop'
   gem 'spring'
 end
 
+group :test do
+  gem 'fivemat'
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
+end

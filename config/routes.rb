@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "callbacks" }
 
   root 'home#index'
 
-  mount Rop::Engine, at: '/rop'
-  mount Screencasts::Engine, at: '/screencasts'
+  resources :profile, only: [:show]
+
+  mount Rop::Engine, at: '/library-guides', as: 'guides'
+  mount Screencasts::Engine, at: '/library-videos', as: 'videos'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217032322) do
+ActiveRecord::Schema.define(version: 20160224055536) do
 
   create_table "rop_courses", force: :cascade do |t|
     t.string   "code",       limit: 255
@@ -19,6 +19,40 @@ ActiveRecord::Schema.define(version: 20160217032322) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
   end
+
+  create_table "screencasts_comments", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.text     "content",    limit: 65535
+    t.integer  "video_id",   limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "screencasts_comments", ["user_id"], name: "index_screencasts_comments_on_user_id", using: :btree
+  add_index "screencasts_comments", ["video_id"], name: "index_screencasts_comments_on_video_id", using: :btree
+
+  create_table "screencasts_videos", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.string   "name",        limit: 255
+    t.string   "url",         limit: 255
+    t.text     "description", limit: 65535
+    t.boolean  "active"
+    t.text     "tags",        limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "screencasts_videos", ["user_id"], name: "index_screencasts_videos_on_user_id", using: :btree
+
+  create_table "screencasts_views", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "video_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "screencasts_views", ["user_id"], name: "index_screencasts_views_on_user_id", using: :btree
+  add_index "screencasts_views", ["video_id"], name: "index_screencasts_views_on_video_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

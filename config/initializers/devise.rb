@@ -1,6 +1,6 @@
 begin
   filepath = "#{Rails.root}/config/omniauth.yml"
-  OMNIAUTH_KEYS = YAML::load_file(filepath)[Rails.env]
+  OMNIAUTH_KEYS = YAML.load_file(filepath)[Rails.env]
 rescue Errno::ENOENT, Psych::SyntaxError
   Rails.logger.error 'An error occured while loading omniauth.yml'
 end
