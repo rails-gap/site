@@ -6,6 +6,7 @@ Rails: Rails 4.2.5
 ## How to run the base project
 Request the database.yml and omniauth.yml and place them in the config folder.
 ```
+$ bundle install
 $ rails s
 ```
 ## How to create new engines
@@ -13,11 +14,11 @@ $ rails s
 ```
 $ rails plugin new <name> --mountable -T --dummy-path=spec/dummy
 ```
-2. Update required attributes on <name>.gemspec.
-3. Update the application layout to inherit the base project layout.
+2. Update required attributes on \<name\>.gemspec.
+3. Update the application layout to reuse the base project layout.
 ```ruby
 <%= content_for :page_title do %>
-  RAILS-GAP <engine>
+  GAP-SHARE | <engine>
 <% end %>
 
 <%= content_for :engine_css do %>
@@ -42,13 +43,13 @@ end
 ```
 ### Base project changes
 1. Add the new engine gem to the gemfile:
-> gem '<name>', git: 'github.com/rails-gap/<name>.git'
+> gem '\<name\>', git: 'github.com/rails-gap/\<name\>.git'
 2. Install the gem reference:
 ```
 $ bundle install
 ```
-Note1: For local development point to path: '../<name>' instead of the git link. <br>
-Note2: Do not run bundle update or all the gems will be updated.
+Note1: For local development point to path: '../\<name\>' instead of the git link. <br>
+Note2: Do not run bundle update or all the gems will be updated. But update the gemfile.lock reference once you think is good to be accessible.
 
 2. Mount the engine in the routes file:
 ```ruby
