@@ -33,6 +33,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
+# User Authorization
+gem 'pundit'
+
 # UI
 gem 'bootstrap-sass', '~> 3.3.6'
 
