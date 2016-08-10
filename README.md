@@ -18,7 +18,7 @@ $ rails plugin new <name> --mountable -T --dummy-path=spec/dummy
 3. Update the application layout to reuse the base project layout.
 ```ruby
 <%= content_for :page_title do %>
-  GAP-SHARE | <engine>
+  GAP-PORTAL | <engine>
 <% end %>
 
 <%= content_for :engine_css do %>

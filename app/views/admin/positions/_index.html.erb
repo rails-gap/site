@@ -1,0 +1,32 @@
+<table id="positions-table" class="table table-striped table-bordered" width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% positions.each do |position| %>
+    <tr>
+      <td><%= position.name %></td>
+      <td>
+        <%= link_to 'Edit', edit_admin_position_path(position), remote: true,
+          class: 'btn btn-primary btn-sm' %>
+        <%= link_to 'Delete', admin_position_delete_path(position), remote: true,
+          class: 'btn btn-danger btn-sm' %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#positions-table').DataTable({
+      retrieve: true,
+      iDisplayLength: 50,
+      columns: [
+        { type: "string" },
+        { orderable: false }
+      ]
+    });
+  });
+</script>

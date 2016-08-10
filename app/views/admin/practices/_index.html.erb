@@ -1,0 +1,35 @@
+<table id="practices-table" class="table table-striped table-bordered" width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Members</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% practices.each do |practice| %>
+    <tr>
+      <td><%= practice.name %></td>
+      <td><%= practice.users.size %></td>
+      <td>
+        <%= link_to 'Edit', edit_admin_practice_path(practice), remote: true,
+          class: 'btn btn-primary btn-sm' %>
+        <%= link_to 'Delete', admin_practice_delete_path(practice), remote: true,
+          class: 'btn btn-danger btn-sm' %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+     $('#practices-table').DataTable({
+       retrieve: true,
+       iDisplayLength: 50,
+       columns: [
+         { type: "string" },
+         { type: "integer" },
+         { orderable: false }
+       ]
+    });
+  });
+</script>

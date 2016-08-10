@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git@github.com:rails-gap/screencasts.git
-  revision: 99e1a167d40f94faf243b6211f0d8838d14dbb2d
+  revision: 6771844f09607f07bff4f2f2c43a67a854198b0a
   branch: develop
   specs:
     screencasts (0.0.1)
@@ -59,6 +59,10 @@ GEM
       execjs
       json
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -171,6 +175,8 @@ GEM
       slop (~> 3.4)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -205,6 +211,8 @@ GEM
     rdoc (4.2.1)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    royce (1.0.6)
+      rails (>= 4.1.4)
     rspec-core (3.4.2)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -292,6 +300,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
   bootstrap-sass (~> 3.3.6)
   brakeman
   breadcrumbs_on_rails
@@ -309,9 +318,11 @@ DEPENDENCIES
   priscilla
   pry
   pundit
+  quiet_assets
   rails (= 4.2.5)
   rails-jquery-autocomplete
   rop!
+  royce
   rspec-rails (~> 3.0)
   rubocop
   sass-rails (~> 5.0)
@@ -326,4 +337,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.11.2
+   1.12.5

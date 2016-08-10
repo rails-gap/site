@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :practice_memberships
   has_many :practices, through: :practice_memberships
+  belongs_to :position
+  belongs_to :personnel_manager, class_name: 'User'
+  has_many :subordinates, class_name: 'User', foreign_key: 'personnel_manager_id'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -8,21 +11,15 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: [:google_oauth2]
 
+  royce_roles [ :employee, :admin ]
+
   validates :email, format: {
     with: /[A-Z0-9a-z]+@growthaccelerationpartners\.com/,
-    message: "Please login with your GAP account"
+    message: "has invalid GAP account"
   }
 
-  def self.from_omniauth(auth)
-    if auth.info.email.include?('@growthaccelerationpartners.com')
-      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
-        user.email = auth.info.email
-        user.name = auth.info.name
-        user.password = Devise.friendly_token[0, 20]
-      end
-    end
+  def password_required?
+    new_record? ? false : super
   end
 
 end

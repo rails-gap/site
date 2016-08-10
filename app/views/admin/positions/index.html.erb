@@ -1,0 +1,20 @@
+<%= render 'admin/header', selected: 'positions' %>
+
+<h2>
+  <span>Positions</span>
+  <span>
+    <%= link_to 'New Position',
+      new_admin_position_path, remote: true, class: 'btn btn-primary pull-right' %>
+  </span>
+</h2>
+
+<div id="positions-content">
+  <%= render 'index', positions: @all_entity_objects %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="positions-modal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div id="positions-modal-content" class="modal-content"></div>
+  </div>
+</div>

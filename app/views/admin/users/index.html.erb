@@ -1,0 +1,19 @@
+<%= render 'admin/header', selected: 'users' %>
+
+<h2>
+  <span>Users</span>
+  <span>
+    <%= link_to 'New User', new_admin_user_path, remote: true, class: 'btn btn-primary pull-right' %>
+  </span>
+</h2>
+
+<div id="users-content">
+  <%= render 'index', users: @all_entity_objects %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="users-modal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div id="users-modal-content" class="modal-content"></div>
+  </div>
+</div>

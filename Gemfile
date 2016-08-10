@@ -35,6 +35,7 @@ gem 'omniauth-google-oauth2'
 
 # User Authorization
 gem 'pundit'
+gem 'royce'
 
 # UI
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -62,6 +63,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'pry'
   gem 'priscilla'
+  gem 'better_errors'
+  gem 'quiet_assets'
 end
 
 group :development do

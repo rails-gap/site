@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= content_for?(:page_title) ? (yield :page_title) : 'GAP-SHARE' %></title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= yield(:engine_css) %>
-  <%= yield(:engine_js) %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= render 'shared/navbar' %>
-<%= yield %>
-<%= render 'shared/footer' %>
-
-</body>
+  <head>
+    <title><%= content_for?(:page_title) ? (yield :page_title) : 'GAP-PORTAL' %></title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= yield(:engine_css) %>
+    <%= yield(:engine_js) %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'shared/messages', flash: flash %>
+    <%= render 'shared/navbar' %>
+    <div class="page">
+      <div class="top-container">
+        <%= yield(:full_page) %>
+      </div>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+    <%= render 'shared/footer' %>
+  </body>
 </html>

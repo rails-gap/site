@@ -1,14 +1,28 @@
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: #333;
 }
 
 div.page {
   background-color: #FFF;
+  min-height: 70%;
 }
 
 div.breadcrumbs {
   margin: 10px 0px;
+}
+
+header.messages-header {
+  background-color: #FFF;
+  width: 100%;
+}
+
+div.alert {
+  margin: 0px;
 }
 
 header.nav-header {
