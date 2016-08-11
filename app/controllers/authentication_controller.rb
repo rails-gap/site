@@ -17,11 +17,11 @@ class AuthenticationController < Devise::OmniauthCallbacksController
   end
 
   def find_user_by_provider
-    User.where(provider: auth.provider, uid: auth.uid).first
+    User.active.where(provider: auth.provider, uid: auth.uid).first
   end
 
   def find_user_by_email
-    User.where(email: auth.info.email).first
+    User.active.where(email: auth.info.email).first
   end
 
   def auth

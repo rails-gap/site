@@ -2,14 +2,14 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Members</th>
+      <th>Icon</th>
       <th></th>
     </tr>
   </thead>
   <% practices.each do |practice| %>
     <tr>
       <td><%= practice.name %></td>
-      <td><%= practice.users.size %></td>
+      <td><%= practice.icon %></td>
       <td>
         <%= link_to 'Edit', edit_admin_practice_path(practice), remote: true,
           class: 'btn btn-primary btn-sm' %>
@@ -27,7 +27,7 @@
        iDisplayLength: 50,
        columns: [
          { type: "string" },
-         { type: "integer" },
+         { type: "string" },
          { orderable: false }
        ]
     });

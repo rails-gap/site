@@ -4,7 +4,7 @@ class Admin::PracticesController < ApplicationController
   private
 
   def entity_parameters
-    params.require(:practice).permit(:name)
+    params.require(:practice).permit(:name, :description, :icon)
   end
 
   def load_delete_entity_object

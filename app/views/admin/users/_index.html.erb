@@ -2,9 +2,9 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Email</th>
       <th>Position</th>
       <th>Personnel Manager</th>
+      <th>Employees</th>
       <th>Employee Type</th>
       <th>Location</th>
       <th></th>
@@ -12,10 +12,10 @@
   </thead>
   <% users.each do |user| %>
     <tr>
-      <td><%= user.name %></td>
-      <td><%= user.email %></td>
-      <td><%= user.position.name if user.position %></td>
-      <td><%= user.personnel_manager.name if user.personnel_manager %></td>
+      <td><%= user.full_name %></td>
+      <td><%= user.position_level %></td>
+      <td><%= user.personnal_manager_name %></td>
+      <td><%= user.subordinates.size %></td>
       <td><%= user.employee_type %></td>
       <td><%= user.location %></td>
       <td>

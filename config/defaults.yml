@@ -1,0 +1,78 @@
+positions:
+  - DEV
+  - MOB
+  - QA
+  - IT
+  - WC
+  - IE
+  - DESIGN
+  - ADMIN
+
+users:
+  - name: Andres
+    last_name: Hernandez Monge
+    email: ahernandez@growthaccelerationpartners.com
+    employee_type: Regular
+    location: Site 1
+    roles:
+      - admin
+      - personnel_manager
+  - name: Roy
+    last_name: Rivera Zamora
+    email: rrivera@growthaccelerationpartners.com
+    employee_type: Regular
+    location: Site 1
+    roles:
+      - admin
+  - name: Sergio
+    last_name: Monge Vargas
+    email: smonge@growthaccelerationpartners.com
+    employee_type: Regular
+    location: Site 1
+    roles:
+      - admin
+      - personnel_manager
+
+practices:
+  - name: General
+    description:
+    icon:
+  - name: Rails
+    description:
+    icon:
+  - name: Android
+    description:
+    icon:
+  - name: iOS
+    description:
+    icon:
+  - name: Java
+    description:
+    icon:
+  - name: Python
+    description:
+    icon:
+  - name: Coaching
+    description:
+    icon:
+  - name: Agile
+    description:
+    icon:
+  - name: Javascript
+    description:
+    icon:
+  - name: Architecture
+    description:
+    icon:
+  - name: .Net
+    description:
+    icon:
+  - name: QA Manual
+    description:
+    icon:
+  - name: QA Automation
+    description:
+    icon:
+  - name: QA Mobile
+    description:
+    icon:

@@ -11,15 +11,30 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: [:google_oauth2]
 
-  royce_roles [ :employee, :admin ]
+  royce_roles [ :admin, :personnel_manager ]
 
   validates :email, format: {
-    with: /[A-Z0-9a-z]+@growthaccelerationpartners\.com/,
+    with: /[A-Z0-9a-z]+@(growthaccelerationpartners|wearegap)\.com/,
     message: "has invalid GAP account"
   }
 
+  scope :active, -> { where(active: 1) }
+  scope :ordered, -> { order(:name, :last_name) }
+
   def password_required?
     new_record? ? false : super
+  end
+
+  def full_name
+    "#{name} #{last_name}"
+  end
+
+  def personnal_manager_name
+    personnel_manager.full_name if personnel_manager
+  end
+
+  def position_level
+    "#{position.name} #{level}" if position
   end
 
 end
