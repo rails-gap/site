@@ -2,17 +2,17 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
   <% positions.each do |position| %>
     <tr>
       <td><%= position.name %></td>
       <td>
-        <%= link_to 'Edit', edit_admin_position_path(position), remote: true,
-          class: 'btn btn-primary btn-sm' %>
-        <%= link_to 'Delete', admin_position_delete_path(position), remote: true,
-          class: 'btn btn-danger btn-sm' %>
+        <%= link_to '', edit_admin_position_path(position), remote: true,
+          class: 'btn btn-primary btn-sm glyphicon glyphicon-pencil' %>
+        <%= link_to '', admin_position_delete_path(position), remote: true,
+          class: 'btn btn-danger btn-sm glyphicon glyphicon-trash' %>
       </td>
     </tr>
   <% end %>

@@ -7,7 +7,7 @@
       <th>Employees</th>
       <th>Employee Type</th>
       <th>Location</th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
   <% users.each do |user| %>
@@ -19,10 +19,10 @@
       <td><%= user.employee_type %></td>
       <td><%= user.location %></td>
       <td>
-        <%= link_to 'Edit', edit_admin_user_path(user), remote: true,
-          class: 'btn btn-primary btn-sm' %>
-        <%= link_to 'Delete', admin_user_delete_path(user), remote: true,
-          class: 'btn btn-danger btn-sm' %>
+        <%= link_to '', edit_admin_user_path(user), remote: true,
+          class: 'btn btn-primary btn-sm glyphicon glyphicon-pencil' %>
+        <%= link_to '', admin_user_delete_path(user), remote: true,
+          class: 'btn btn-danger btn-sm glyphicon glyphicon-trash' %>
       </td>
     </tr>
   <% end %>

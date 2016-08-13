@@ -3,7 +3,9 @@
 <h2>
   <span>Users</span>
   <span>
-    <%= link_to 'New User', new_admin_user_path, remote: true, class: 'btn btn-primary pull-right' %>
+    <%= link_to new_admin_user_path, remote: true, class: 'btn btn-primary pull-right' do %>
+      <span class="glyphicon glyphicon-plus"></span> New User
+    <% end %>
   </span>
 </h2>
 

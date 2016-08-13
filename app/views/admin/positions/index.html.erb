@@ -3,8 +3,9 @@
 <h2>
   <span>Positions</span>
   <span>
-    <%= link_to 'New Position',
-      new_admin_position_path, remote: true, class: 'btn btn-primary pull-right' %>
+    <%= link_to new_admin_position_path, remote: true, class: 'btn btn-primary pull-right' do %>
+      <span class="glyphicon glyphicon-plus"></span> New Position
+    <% end %>
   </span>
 </h2>
 
