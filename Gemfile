@@ -69,7 +69,7 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.42.0', require: false
   gem 'spring'
 end
 

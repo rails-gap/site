@@ -120,11 +120,6 @@ Style/DefWithParentheses:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#method-parens'
   Enabled: true
 
-Style/DeprecatedHashMethods:
-  Description: 'Checks for use of deprecated Hash methods.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#hash-key'
-  Enabled: true
-
 Style/DotPosition:
   Description: 'Checks the position of the dot in multi-line method calls.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
@@ -211,6 +206,15 @@ Style/InfiniteLoop:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#infinite-loop'
   Enabled: true
 
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+  SupportedStyles:
+    - aligned
+    - indented
+    - indented_relative_to_receiver
+  # By default, the indentation width from Style/IndentationWidth is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
 
 Style/LeadingCommentSpace:
   Description: 'Comments should start with a space.'

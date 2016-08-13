@@ -9,7 +9,7 @@
   <% practices.each do |practice| %>
     <tr>
       <td><%= practice.name %></td>
-      <td><%= practice.icon %></td>
+      <td><i class="mdi mdi-<%= practice.icon %> mdi-24px"></i></td>
       <td>
         <%= link_to 'Edit', edit_admin_practice_path(practice), remote: true,
           class: 'btn btn-primary btn-sm' %>

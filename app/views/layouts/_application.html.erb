@@ -3,10 +3,10 @@
   <head>
     <title><%= content_for?(:page_title) ? (yield :page_title) : 'GAP-PORTAL' %></title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= yield(:engine_css) %>
-    <%= yield(:engine_js) %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= yield(:css_include) %>
     <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= yield(:js_include) %>
   </head>
   <body>
     <%= render 'shared/messages', flash: flash %>

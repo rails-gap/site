@@ -21,11 +21,11 @@ $ rails plugin new <name> --mountable -T --dummy-path=spec/dummy
   GAP-PORTAL | <engine>
 <% end %>
 
-<%= content_for :engine_css do %>
+<%= content_for :css_include do %>
   <%= stylesheet_link_tag "<engine>/application", media: "all" %>
 <% end %>
 
-<%= content_for :engine_js do %>
+<%= content_for :js_include do %>
   <%= javascript_include_tag "<engine>/application.js" %>
 <% end %>
 
