@@ -36,43 +36,43 @@ users:
 practices:
   - name: General
     description:
-    icon:
+    icon: bulletin-board
   - name: Rails
     description:
-    icon:
+    icon: bulletin-board
   - name: Android
     description:
-    icon:
+    icon: android
   - name: iOS
     description:
-    icon:
+    icon: apple
   - name: Java
     description:
-    icon:
+    icon: coffee
   - name: Python
     description:
-    icon:
+    icon: language-python
   - name: Coaching
     description:
-    icon:
+    icon: account-multiple
   - name: Agile
     description:
-    icon:
+    icon: chart-timeline
   - name: Javascript
     description:
-    icon:
+    icon: language-javascript
   - name: Architecture
     description:
-    icon:
+    icon: amazon-clouddrive
   - name: .Net
     description:
-    icon:
+    icon: language-csharp
   - name: QA Manual
     description:
-    icon:
+    icon: bug
   - name: QA Automation
     description:
-    icon:
+    icon: laptop
   - name: QA Mobile
     description:
-    icon:
+    icon: cellphone

@@ -11,10 +11,14 @@
       <td><%= practice.name %></td>
       <td><i class="mdi mdi-<%= practice.icon %> mdi-24px"></i></td>
       <td>
-        <%= link_to '', edit_admin_practice_path(practice), remote: true,
-          class: 'btn btn-primary btn-sm glyphicon glyphicon-pencil' %>
-        <%= link_to '', admin_practice_delete_path(practice), remote: true,
-          class: 'btn btn-danger btn-sm glyphicon glyphicon-trash' %>
+        <%= link_to edit_admin_practice_path(practice), remote: true,
+          class: 'btn btn-primary btn-sm' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+        <%= link_to admin_practice_delete_path(practice), remote: true,
+          class: 'btn btn-danger btn-sm' do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
       </td>
     </tr>
   <% end %>

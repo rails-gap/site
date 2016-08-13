@@ -19,10 +19,14 @@
       <td><%= user.employee_type %></td>
       <td><%= user.location %></td>
       <td>
-        <%= link_to '', edit_admin_user_path(user), remote: true,
-          class: 'btn btn-primary btn-sm glyphicon glyphicon-pencil' %>
-        <%= link_to '', admin_user_delete_path(user), remote: true,
-          class: 'btn btn-danger btn-sm glyphicon glyphicon-trash' %>
+        <%= link_to edit_admin_user_path(user), remote: true,
+          class: 'btn btn-primary btn-sm' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+        <%= link_to admin_user_delete_path(user), remote: true,
+          class: 'btn btn-danger btn-sm' do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
       </td>
     </tr>
   <% end %>
