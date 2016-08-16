@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <h4 class="modal-title">Edit Roles</h4>
+</div>
+<%= form_tag(admin_user_update_roles_path(user), remote: true) do %>
+  <div class="modal-body">
+    <div class="errors"></div>
+    <% roles.each do |role|%>
+      <div class="checkbox">
+        <%= hidden_field_tag "roles[#{role}]", '' %>
+        <label>
+          <%= check_box_tag "roles[#{role}]", 'true', user.has_role?(role) %>
+          <%= role.titleize %>
+        </label>
+      </div>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <%= submit_tag 'Update Roles', class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', '#', class: 'btn', data: { dismiss: 'modal' } %>
+  </div>
+<% end %>

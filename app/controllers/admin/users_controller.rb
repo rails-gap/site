@@ -1,7 +1,18 @@
 class Admin::UsersController < ApplicationController
   include DefaultCrud
 
+  before_action :authenticate_user!
   before_action :load_personnel_managers, only: [:new, :edit]
+
+  def roles
+    load_entity_object_by_id
+    @roles = User.available_role_names
+  end
+
+  def update_roles
+    load_entity_object_by_id
+    update_user_roles
+  end
 
   private
 
@@ -12,7 +23,7 @@ class Admin::UsersController < ApplicationController
         :employee_type, :location, :active)
   end
 
-  def load_delete_entity_object
+  def load_entity_object_by_id
     @entity_object = entity.find(params[:user_id])
   end
 
@@ -30,6 +41,12 @@ class Admin::UsersController < ApplicationController
 
   def other_personnel_managers
     all_personnel_managers.reject { |user| user == @entity_object }
+  end
+
+  def update_user_roles
+    params[:roles].each do |role, value|
+      value == 'true' ? @entity_object.add_role(role) : @entity_object.remove_role(role)
+    end
   end
 
 end

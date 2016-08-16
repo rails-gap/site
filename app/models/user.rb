@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   royce_roles [ :admin, :personnel_manager ]
 
+  validates :name, presence: true
+  validates :last_name, presence: true
   validates :email, format: {
     with: /[A-Z0-9a-z]+@(growthaccelerationpartners|wearegap)\.com/,
     message: "has invalid GAP account"

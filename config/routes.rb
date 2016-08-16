@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users do
       get 'delete'
+      get 'roles'
+      post 'update_roles'
     end
     resources :positions do
       get 'delete'

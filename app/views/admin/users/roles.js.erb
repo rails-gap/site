@@ -1,0 +1,3 @@
+$("#users-modal-content")
+  .html("<%= escape_javascript(render 'roles', user: @entity_object, roles: @roles ) %>");
+$("#users-modal").modal();

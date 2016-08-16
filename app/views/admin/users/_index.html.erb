@@ -19,6 +19,10 @@
       <td><%= user.employee_type %></td>
       <td><%= user.location %></td>
       <td>
+        <%= link_to admin_user_roles_path(user), remote: true,
+          class: 'btn btn-primary btn-sm' do %>
+          <span class="glyphicon glyphicon-cog"></span> Roles
+        <% end %>
         <%= link_to edit_admin_user_path(user), remote: true,
           class: 'btn btn-primary btn-sm' do %>
           <span class="glyphicon glyphicon-pencil"></span>

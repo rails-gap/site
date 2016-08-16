@@ -5,7 +5,7 @@ module DefaultCrud
   included do
     before_action :load_entity_object, only: [:show, :edit, :update, :destroy]
     before_action :load_all_entity_objects, only: [:index, :create, :update, :destroy]
-    before_action :load_delete_entity_object, only: [:delete]
+    before_action :load_entity_object_by_id, only: [:delete]
   end
 
   def new
