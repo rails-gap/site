@@ -2,6 +2,7 @@ class Admin::UsersController < ApplicationController
   include DefaultCrud
 
   before_action :authenticate_user!
+  before_action :admin_only?
   before_action :load_personnel_managers, only: [:new, :edit]
 
   def roles
@@ -36,7 +37,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def all_personnel_managers
-    User.active.ordered.select { |user| user.has_role?(:personnel_manager) }
+    User.active.ordered.personnel_managers
   end
 
   def other_personnel_managers

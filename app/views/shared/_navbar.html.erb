@@ -38,7 +38,7 @@
                 <ul class="dropdown-menu">
                   <li><%= link_to('My Profile', main_app.profile_path(current_user)) %></li>
                   <li role="separator" class="divider"></li>
-                  <% if policy(:user).admin? %>
+                  <% if current_user.admin? %>
                     <li><%= link_to('Admin', main_app.admin_users_path) %></li>
                     <li role="separator" class="divider"></li>
                   <% end %>

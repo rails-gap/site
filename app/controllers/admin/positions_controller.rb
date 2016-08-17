@@ -2,6 +2,7 @@ class Admin::PositionsController < ApplicationController
   include DefaultCrud
 
   before_action :authenticate_user!
+  before_action :admin_only?
 
   private
 

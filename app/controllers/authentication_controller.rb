@@ -2,11 +2,9 @@ class AuthenticationController < Devise::OmniauthCallbacksController
 
   def google_oauth2
     if user
-      update_user
-      sign_in_and_redirect user, event: :authentication
+      user.active ? authorize : no_authorize('Your account is disabled. Please contact an admin.')
     else
-      flash[:error] = 'Please sign in with your GAP account'
-      redirect_to root_path
+      no_authorize('Please sign in with your GAP account.')
     end
   end
 
@@ -17,15 +15,20 @@ class AuthenticationController < Devise::OmniauthCallbacksController
   end
 
   def find_user_by_provider
-    User.active.where(provider: auth.provider, uid: auth.uid).first
+    User.where(provider: auth.provider, uid: auth.uid).first
   end
 
   def find_user_by_email
-    User.active.where(email: auth.info.email).first
+    User.where(email: auth.info.email).first
   end
 
   def auth
     @auth ||= request.env['omniauth.auth']
+  end
+
+  def authorize
+    update_user
+    sign_in_and_redirect user, event: :authentication
   end
 
   def update_user
@@ -35,6 +38,11 @@ class AuthenticationController < Devise::OmniauthCallbacksController
     user.picture = auth.extra.raw_info.picture
     user.image = auth.info.image
     user.save
+  end
+
+  def no_authorize(message)
+    flash[:error] = message
+    redirect_to root_path
   end
 
 end

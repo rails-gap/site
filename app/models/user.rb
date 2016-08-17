@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: [:google_oauth2]
 
-  royce_roles [ :admin, :personnel_manager ]
+  royce_roles [ :admin, :personnel_manager, :video_editor, :guide_editor ]
 
   validates :name, presence: true
   validates :last_name, presence: true
