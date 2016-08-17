@@ -23,6 +23,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav" data-no-turbolink>
             <% if user_signed_in? %>
+              <li><%= link_to('Directory', main_app.profiles_path) %></li>
               <li><%= link_to('Guides', guides.root_path) %></li>
               <li><%= link_to('Videos', videos.root_path) %></li>
             <% end %>

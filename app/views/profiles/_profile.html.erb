@@ -1,0 +1,8 @@
+<div class="col-md-4 col-sm-6">
+  <%= image_tag(user.image, class: 'profile-image') %>
+  <h3><%= user.full_name %> (<%= user.position_level %>)</h3>
+  <p><%= user.email %></p>
+  <% user.practices.each do |practice| %>
+    <i class="mdi mdi-<%= practice.icon %> mdi-24px" title="<%= practice.name %>"></i>
+  <% end %>
+</div>

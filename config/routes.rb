@@ -3,8 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :profile, only: [:show]
-  resources :admin, only: [:index]
+  resources :profiles, only: [:index, :show]
 
   namespace :admin do
     resources :users do

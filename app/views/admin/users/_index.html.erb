@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <% users.each do |user| %>
-    <tr>
+    <tr class="<%= 'warning' unless user.active %>">
       <td><%= user.full_name %></td>
       <td><%= user.position_level %></td>
       <td><%= user.personnal_manager_name %></td>
