@@ -39,4 +39,8 @@ class User < ActiveRecord::Base
     "#{position.name} #{level}" if position
   end
 
+  def profile_image
+    image || 'default.png'
+  end
+
 end
