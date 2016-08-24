@@ -1,0 +1,33 @@
+<h1><%= @user.full_name %></h1>
+
+<div class="profile">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pull-left">
+        <%= image_tag(@user.profile_image, class: 'profile-image img-circle') %>
+      </div>
+      <div class="pull-left">
+        <div><%= @user.position_level %> | <%= @user.email %></div>
+        <br />
+        <div>Location: <%= @user.location %></div>
+        <div>Personnel Manager: <%= @user.personnel_manager.full_name if @user.personnel_manager %></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Practices</h2>
+  <div class="row">
+    <% @user.practices.each do |practice| %>
+      <div class="col-md-3 col-sm-4">
+        <%= link_to directory_practice_path(practice) do %>
+          <%= render 'directory/practices/practice', practice: practice %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <h2>Videos</h2>
+  <div class="row">
+
+  </div>
+</div>

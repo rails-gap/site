@@ -34,9 +34,6 @@ users:
       - personnel_manager
 
 practices:
-  - name: General
-    description:
-    icon: bulletin-board
   - name: Rails
     description:
     icon: bulletin-board

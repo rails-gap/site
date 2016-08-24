@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20160805052523) do
   end
 
   create_table "practice_memberships", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.boolean  "lead",                  default: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "user_id",     limit: 4
     t.integer  "practice_id", limit: 4
   end

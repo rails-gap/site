@@ -17,4 +17,5 @@ module ApplicationHelper
       notice: 'exclamation-sign'
     }.fetch(flash_type, 'question-sign')
   end
+
 end

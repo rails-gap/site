@@ -1,0 +1,45 @@
+// Place all the styles related to the profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+img.profile-image {
+  height: 100px;
+  width: 100px;
+}
+img.profile-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.profile-box {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  padding: 0px;
+}
+
+.profile-box-content {
+  line-height: 22px;
+}
+
+.profile-box-content > span {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.profile .profile-image {
+  margin-right: 10px;
+}
+
+.member-box {
+  width: 100%;
+}
+
+.member-box .profile-icon {
+  margin-right: 10px;
+}
+
+.practice-box {
+  text-align: center;
+  margin: 20px;
+}

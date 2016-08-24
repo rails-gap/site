@@ -7,6 +7,16 @@ body {
   background-color: #333;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: $red;
+  text-decoration: none;
+}
+
 div.page {
   background-color: #FFF;
   min-height: 70%;

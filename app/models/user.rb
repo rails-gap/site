@@ -43,4 +43,8 @@ class User < ActiveRecord::Base
     image || 'default.png'
   end
 
+  def profile_icon
+    picture || 'default.png'
+  end
+
 end

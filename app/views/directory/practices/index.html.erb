@@ -1,0 +1,10 @@
+<h1>Practices</h1>
+<div class="row">
+  <% @practices.each do |practice| %>
+    <div class="col-md-3 col-sm-4">
+      <%= link_to directory_practice_path(practice) do %>
+        <%= render 'practice', practice: practice %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

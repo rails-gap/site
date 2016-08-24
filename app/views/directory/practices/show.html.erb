@@ -1,0 +1,33 @@
+<h1>
+  <i class="mdi mdi-<%= @practice.icon %> mdi-36px" title="<%= @practice.name %>"></i>
+  <%= @practice.name %>
+</h1>
+
+<div class="practice">
+  <div><%= @practice.description %></div>
+
+  <h2>Lead</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to directory_profile_path(@practice.users.first) do %>
+        <%= render 'member', user: @practice.users.first %>
+      <% end %>
+    </div>
+  </div>
+
+  <h2>Members</h2>
+  <div class="row">
+    <% @practice.users.each do |user| %>
+      <div class="col-md-3 col-sm-4">
+        <%= link_to directory_profile_path(user) do %>
+          <%= render 'member', user: user %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <h2>Videos</h2>
+  <div class="row">
+  </div>
+
+</div>

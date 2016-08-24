@@ -1,0 +1,18 @@
+<div class="profile-box">
+  <div>
+    <%= link_to directory_profile_path(user) do %>
+      <%= image_tag(user.profile_image, class: 'profile-image img-circle') %>
+    <% end %>
+  </div>
+  <div>
+    <h4><%= user.full_name %></h4>
+    <div class="profile-box-content">
+      <span><%= user.position_level %></span>
+      <span>
+        <% user.practices.each do |practice| %>
+          <i class="mdi mdi-<%= practice.icon %> mdi-24px" title="<%= practice.name %>"></i>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</div>
