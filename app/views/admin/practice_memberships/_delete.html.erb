@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <h4 class="modal-title">Remove Member</h4>
+</div>
+<div class="modal-body">
+  <ul class="errors"></ul>
+  Are you sure that you want to remove <b><%= membership.user.full_name %></b>
+  from the <b><%= practice.name %></b> practice?
+</div>
+<div class="modal-footer">
+  <%= link_to 'Cancel', '#', class: 'btn btn-default', data: { dismiss: 'modal' } %>
+  <%= link_to 'Remove Member', admin_practice_practice_membership_path(practice, membership),
+    method: :delete, remote: true, class: 'btn btn-danger' %>
+</div>

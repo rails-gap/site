@@ -1,0 +1,9 @@
+$("ul.errors").html("")
+<% if membership.errors.any? %>
+  <% membership.errors.full_messages.each do |message| %>
+    $("div.errors").append($("<div class='alert alert-danger'/>").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $("#members-content").html("<%= escape_javascript(render 'index', practice: practice, memberships: memberships) %>");
+  $("#members-modal").modal("hide");
+<% end %>

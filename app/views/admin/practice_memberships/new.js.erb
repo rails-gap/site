@@ -1,0 +1,3 @@
+$("#members-modal-content")
+  .html("<%= escape_javascript(render 'new', practice: @practice, membership: @entity_object, users: @users) %>");
+$("#members-modal").modal();

@@ -1,0 +1,14 @@
+<%= form_for [:admin, :practice, membership], remote: true, html: { style: 'display:inline;' } do |f| %>
+  <div class="modal-body">
+    <div class="errors"></div>
+    <div class="form-group">
+      <%= f.hidden_field :practice_id, value: practice.id %>
+      <%= f.label :user_id, class: 'control-label' %>
+      <%= f.collection_select(:user_id, users, :id, :full_name, {}, { class: 'form-control' }) %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit 'Add Member', class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', '#', class: 'btn', data: { dismiss: 'modal' } %>
+  </div>
+<% end %>

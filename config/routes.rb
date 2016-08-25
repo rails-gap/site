@@ -9,16 +9,19 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users do
+    resources :users, except: [:show] do
       get 'delete'
       get 'roles'
       post 'update_roles'
     end
-    resources :positions do
+    resources :positions, except: [:show] do
       get 'delete'
     end
-    resources :practices do
+    resources :practices, except: [:show] do
       get 'delete'
+      resources :practice_memberships, path: :member, except: [:show] do
+        get 'delete'
+      end
     end
   end
 

@@ -1,0 +1,22 @@
+<%= render 'admin/header', selected: 'practice_members' %>
+
+<h2>
+  <span><%= @practice.name %> Members</span>
+  <span>
+    <%= link_to new_admin_practice_practice_membership_path, remote: true,
+      class: 'btn btn-primary pull-right' do %>
+      <span class="glyphicon glyphicon-plus"></span> Add Member
+    <% end %>
+  </span>
+</h2>
+
+<div id="members-content">
+  <%= render 'index', practice: @practice, memberships: @all_entity_objects %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="members-modal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div id="members-modal-content" class="modal-content"></div>
+  </div>
+</div>
