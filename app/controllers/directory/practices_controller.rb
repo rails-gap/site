@@ -3,7 +3,7 @@ class Directory::PracticesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @practices = Practice.all
+    @practices = Practice.active.ordered.all
   end
 
   def show

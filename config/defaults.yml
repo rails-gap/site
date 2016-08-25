@@ -36,7 +36,7 @@ users:
 practices:
   - name: Rails
     description:
-    icon: bulletin-board
+    icon: diamond
   - name: Android
     description:
     icon: android

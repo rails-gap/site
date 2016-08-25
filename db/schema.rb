@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824235634) do
+ActiveRecord::Schema.define(version: 20160825003752) do
 
   create_table "positions", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20160824235634) do
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
     t.string   "icon",        limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "active",                  default: true
   end
 
   create_table "roles", force: :cascade do |t|

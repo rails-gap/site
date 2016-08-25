@@ -7,7 +7,7 @@ class Admin::PracticesController < ApplicationController
   private
 
   def entity_parameters
-    params.require(:practice).permit(:name, :description, :icon)
+    params.require(:practice).permit(:name, :description, :icon, :active)
   end
 
   def load_entity_object_by_id

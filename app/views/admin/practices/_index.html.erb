@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <% practices.each do |practice| %>
-    <tr>
+    <tr class="<%= 'warning' unless practice.active %>">
       <td><%= practice.name %></td>
       <td><i class="mdi mdi-<%= practice.icon %> mdi-24px"></i></td>
       <td>

@@ -9,13 +9,17 @@
   <h2>Lead</h2>
   <div class="row">
     <div class="col-md-12">
-      <%= link_to directory_profile_path(@practice.users.first) do %>
-        <%= render 'member', user: @practice.users.first %>
+      <% if @practice.leads.any? %>
+        <%= link_to directory_profile_path(@practice.leads.first) do %>
+          <%= render 'member', user: @practice.leads.first %>
+        <% end %>
+      <% else %>
+        Not assigned yet
       <% end %>
     </div>
   </div>
 
-  <h2>Members</h2>
+  <h2>Members <span class="badge"><%= @practice.users.size %></span></h2>
   <div class="row">
     <% @practice.users.each do |user| %>
       <div class="col-md-3 col-sm-4">
