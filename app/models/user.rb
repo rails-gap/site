@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   belongs_to :position
   belongs_to :personnel_manager, class_name: 'User'
   has_many :subordinates, class_name: 'User', foreign_key: 'personnel_manager_id'
+  has_many :practice_leads, class_name: 'Practice', foreign_key: 'practice_lead_id'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,7 +12,13 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: [:google_oauth2]
 
-  royce_roles [ :admin, :personnel_manager, :video_editor, :guide_editor ]
+  royce_roles [
+    :admin,
+    :personnel_manager,
+    :practice_lead,
+    :video_editor,
+    :guide_editor
+  ]
 
   validates :name, presence: true
   validates :last_name, presence: true

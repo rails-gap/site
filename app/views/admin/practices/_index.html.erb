@@ -3,6 +3,7 @@
     <tr>
       <th>Name</th>
       <th>Icon</th>
+      <th>Practice Lead</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -10,6 +11,7 @@
     <tr class="<%= 'warning' unless practice.active %>">
       <td><%= practice.name %></td>
       <td><i class="mdi mdi-<%= practice.icon %> mdi-24px"></i></td>
+      <td><%= practice.practice_lead_name %></td>
       <td>
         <%= link_to edit_admin_practice_path(practice), remote: true,
           class: 'btn btn-primary btn-sm' do %>
@@ -30,6 +32,7 @@
        retrieve: true,
        iDisplayLength: 50,
        columns: [
+         { type: "string" },
          { type: "string" },
          { type: "string" },
          { orderable: false }

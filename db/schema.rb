@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825003752) do
+ActiveRecord::Schema.define(version: 20160825034759) do
 
   create_table "positions", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -28,12 +28,13 @@ ActiveRecord::Schema.define(version: 20160825003752) do
   end
 
   create_table "practices", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "description", limit: 255
-    t.string   "icon",        limit: 255
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "active",                  default: true
+    t.string   "name",             limit: 255
+    t.string   "description",      limit: 255
+    t.string   "icon",             limit: 255
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.boolean  "active",                       default: true
+    t.integer  "practice_lead_id", limit: 4
   end
 
   create_table "roles", force: :cascade do |t|

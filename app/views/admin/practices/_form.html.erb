@@ -1,22 +1,30 @@
 <%= form_for [:admin, practice], remote: true, html: { style: 'display:inline;' } do |f| %>
   <div class="modal-body">
     <div class="errors"></div>
-    <div class="form-group">
-      <%= f.label :name, class: 'control-label' %>
-      <%= f.text_field :name, class: 'form-control' %>
+    <div class="row">
+      <div class="form-group col-sm-6"">
+        <%= f.label :name, class: 'control-label' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group col-sm-6"">
+        <%= f.label :icon, class: 'control-label' %>
+        <%= f.text_field :icon, class: 'form-control' %>
+      </div>
     </div>
     <div class="form-group">
       <%= f.label :description, class: 'control-label' %>
       <%= f.text_area :description, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :icon, class: 'control-label' %>
-      <%= f.text_field :icon, class: 'form-control' %>
+      <%= f.label :practice_lead_id, class: 'control-label' %>
+      <%= f.collection_select(:practice_lead_id, practice_leads, :id, :full_name,
+        { include_blank: true }, { class: 'form-control' }) %>
     </div>
     <div class="form-group">
       <%= f.check_box :active %>
       <%= f.label :active, class: 'control-label' %>
     </div>
+
   </div>
   <div class="modal-footer">
     <%= f.submit class: 'btn btn-primary' %>
