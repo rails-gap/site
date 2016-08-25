@@ -9,6 +9,6 @@
 </div>
 <div class="modal-footer">
   <%= link_to 'Cancel', '#', class: 'btn btn-default', data: { dismiss: 'modal' } %>
-  <%= link_to 'Remove Member', admin_practice_practice_membership_path(practice, membership),
+  <%= link_to 'Remove Member', admin_practice_membership_path(practice, membership),
     method: :delete, remote: true, class: 'btn btn-danger' %>
 </div>

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :practice_memberships
-  has_many :practices, through: :practice_memberships
+  has_many :memberships
+  has_many :practices, through: :memberships
   belongs_to :position
   belongs_to :personnel_manager, class_name: 'User'
   has_many :subordinates, class_name: 'User', foreign_key: 'personnel_manager_id'

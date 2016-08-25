@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
     resources :practices, except: [:show] do
       get 'delete'
-      resources :practice_memberships, path: :member, except: [:show] do
+      resources :memberships, path: :members, except: [:show] do
         get 'delete'
       end
     end

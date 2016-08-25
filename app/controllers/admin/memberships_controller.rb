@@ -1,4 +1,4 @@
-class Admin::PracticeMembershipsController < ApplicationController
+class Admin::MembershipsController < ApplicationController
   include DefaultCrud
 
   before_action :authenticate_user!
@@ -10,12 +10,12 @@ class Admin::PracticeMembershipsController < ApplicationController
 
   def entity_parameters
     params
-      .require(:practice_membership)
+      .require(:membership)
       .permit(:user_id, :practice_id, :lead)
   end
 
   def load_entity_object_by_id
-    @entity_object = entity.find(params[:practice_membership_id])
+    @entity_object = entity.find(params[:membership_id])
   end
 
   def load_all_entity_objects
