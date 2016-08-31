@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   include DefaultCrud
 
   before_action :authenticate_user!
-  before_action :admin_only?
+  before_action :admin_access?
   before_action :load_personnel_managers, only: [:new, :edit]
 
   def roles

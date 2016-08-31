@@ -13,17 +13,21 @@
       <td><i class="mdi mdi-<%= practice.icon %> mdi-24px"></i></td>
       <td><%= practice.practice_lead_name %></td>
       <td>
-        <%= link_to admin_practice_memberships_path(practice),
-          class: 'btn btn-primary btn-sm' do %>
-          <span class="glyphicon glyphicon-cog"></span> Members
+        <% if current_user.can_manage_practice?(practice.id) %>
+          <%= link_to admin_practice_memberships_path(practice),
+            class: 'btn btn-primary btn-sm' do %>
+            <span class="glyphicon glyphicon-cog"></span> Members
+          <% end %>
         <% end %>
-        <%= link_to edit_admin_practice_path(practice), remote: true,
-          class: 'btn btn-primary btn-sm' do %>
-          <span class="glyphicon glyphicon-pencil"></span>
-        <% end %>
-        <%= link_to admin_practice_delete_path(practice), remote: true,
-          class: 'btn btn-danger btn-sm' do %>
-          <span class="glyphicon glyphicon-trash"></span>
+        <% if current_user.admin? %>
+          <%= link_to edit_admin_practice_path(practice), remote: true,
+            class: 'btn btn-primary btn-sm' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+          <%= link_to admin_practice_delete_path(practice), remote: true,
+            class: 'btn btn-danger btn-sm' do %>
+            <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
         <% end %>
       </td>
     </tr>

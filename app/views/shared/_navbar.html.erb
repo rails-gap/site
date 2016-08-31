@@ -46,10 +46,18 @@
                   <%= current_user.full_name %> <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to('My Profile', main_app.directory_profile_path(current_user)) %></li>
+                  <li>
+                    <%= link_to('My Profile', main_app.directory_profile_path(current_user)) %>
+                  </li>
                   <li role="separator" class="divider"></li>
                   <% if current_user.admin? %>
                     <li><%= link_to('Admin', main_app.admin_users_path) %></li>
+                    <li role="separator" class="divider"></li>
+                  <% elsif current_user.practice_lead? %>
+                    <li><%= link_to('Admin', main_app.admin_practices_path) %></li>
+                    <li role="separator" class="divider"></li>
+                  <% elsif current_user.content_admin? %>
+                    <li><%= link_to('Admin', main_app.admin_videos_path) %></li>
                     <li role="separator" class="divider"></li>
                   <% end %>
                   <li>

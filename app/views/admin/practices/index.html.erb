@@ -3,8 +3,10 @@
 <h2>
   <span>Practices</span>
   <span>
-    <%= link_to new_admin_practice_path, remote: true, class: 'btn btn-primary pull-right' do %>
-      <span class="glyphicon glyphicon-plus"></span> New Practice
+    <% if current_user.admin? %>
+      <%= link_to new_admin_practice_path, remote: true, class: 'btn btn-primary pull-right' do %>
+        <span class="glyphicon glyphicon-plus"></span> New Practice
+      <% end %>
     <% end %>
   </span>
 </h2>

@@ -18,4 +18,16 @@ module ApplicationHelper
     }.fetch(flash_type, 'question-sign')
   end
 
+  def valid_admin?
+    current_user.admin?
+  end
+
+  def valid_practice_lead?
+    valid_admin? || current_user.practice_lead?
+  end
+
+  def valid_content_admin?
+    valid_practice_lead? || current_user.content_admin?
+  end
+
 end

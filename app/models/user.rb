@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   belongs_to :position
   belongs_to :personnel_manager, class_name: 'User'
   has_many :subordinates, class_name: 'User', foreign_key: 'personnel_manager_id'
-  has_many :practice_leads, class_name: 'Practice', foreign_key: 'practice_lead_id'
+  has_many :practices_leading, class_name: 'Practice', foreign_key: 'practice_lead_id'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -16,8 +16,7 @@ class User < ActiveRecord::Base
     :admin,
     :personnel_manager,
     :practice_lead,
-    :video_editor,
-    :guide_editor
+    :content_admin
   ]
 
   validates :name, presence: true
@@ -52,6 +51,16 @@ class User < ActiveRecord::Base
 
   def profile_icon
     picture || 'default.png'
+  end
+
+  def can_manage_practice?(practice_id)
+    admin? || (practice_lead? && lead_practice?(practice_id))
+  end
+
+  private
+
+  def lead_practice?(practice_id)
+    practices_leading.find { |practice| practice.id == practice_id }
   end
 
 end

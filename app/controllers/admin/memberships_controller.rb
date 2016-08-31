@@ -2,7 +2,7 @@ class Admin::MembershipsController < ApplicationController
   include DefaultCrud
 
   before_action :authenticate_user!
-  before_action :admin_only?
+  before_action :practice_lead_access?
   before_action :load_practice, only: [:index, :new, :create, :delete, :destroy]
   before_action :load_users, only: [:new, :edit]
 
