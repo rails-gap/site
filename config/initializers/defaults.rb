@@ -3,9 +3,11 @@ begin
   DEFAULT_POSITIONS = defaults['positions']
   DEFAULT_USERS = defaults['users']
   DEFAULT_PRACTICES = defaults['practices']
+  DEFAULT_VIDEOS = defaults['videos']
 rescue Errno::ENOENT, Psych::SyntaxError
   Rails.logger.error 'An error occured while loading defaults.yml'
 end
 DEFAULT_POSITIONS ||= []
 DEFAULT_USERS ||= []
 DEFAULT_PRACTICES ||= []
+DEFAULT_VIDEOS ||= []

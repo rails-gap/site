@@ -31,5 +31,19 @@ namespace :gap do
     end
     puts 'Practices created'
 
+    # Videos
+    puts 'Creating default videos...'
+    DEFAULT_VIDEOS.each do |video|
+      Video
+        .where(name: video['name'],
+          url: video['url'],
+          description: video['description'],
+          tags: video['tags'],
+          practice: Practice.first,
+          user: User.first)
+        .first_or_create
+    end
+    puts 'Videos created'
+
   end
 end

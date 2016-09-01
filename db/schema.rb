@@ -68,36 +68,6 @@ ActiveRecord::Schema.define(version: 20160825034759) do
 
   add_index "royce_role", ["name"], name: "index_royce_role_on_name", using: :btree
 
-  create_table "screencasts_comments", force: :cascade do |t|
-    t.text     "content",    limit: 65535
-    t.integer  "video_id",   limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "user_email", limit: 255
-  end
-
-  add_index "screencasts_comments", ["video_id"], name: "index_screencasts_comments_on_video_id", using: :btree
-
-  create_table "screencasts_videos", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "url",         limit: 255
-    t.text     "description", limit: 65535
-    t.boolean  "active"
-    t.text     "tags",        limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "user_email",  limit: 255
-  end
-
-  create_table "screencasts_views", force: :cascade do |t|
-    t.integer  "video_id",   limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "user_email", limit: 255
-  end
-
-  add_index "screencasts_views", ["video_id"], name: "index_screencasts_views_on_video_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",   null: false
     t.string   "encrypted_password",     limit: 255, default: "",   null: false
@@ -127,5 +97,20 @@ ActiveRecord::Schema.define(version: 20160825034759) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "videos", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.integer  "practice_id", limit: 4
+    t.string   "name",        limit: 255
+    t.string   "url",         limit: 255
+    t.text     "description", limit: 65535
+    t.boolean  "active",                    default: true
+    t.text     "tags",        limit: 65535
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  add_index "videos", ["practice_id"], name: "index_videos_on_practice_id", using: :btree
+  add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
 
 end

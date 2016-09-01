@@ -23,8 +23,17 @@ Rails.application.routes.draw do
         get 'delete'
       end
     end
+    resources :videos do
+      get 'delete'
+    end
+  end
+
+  resources :videos do
+    collection do
+      get :autocomplete_video_name
+      post :search
+    end
   end
 
   mount Rop::Engine, at: '/guides', as: 'guides'
-  mount Screencasts::Engine, at: '/videos', as: 'videos'
 end
