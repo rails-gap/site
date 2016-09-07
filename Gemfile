@@ -43,12 +43,13 @@ gem 'royce'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # Engines
-gem 'rop', git: 'git@github.com:rails-gap/rop.git', branch: 'develop'
+# gem 'rop', git: 'git@github.com:rails-gap/rop.git', branch: 'develop'
 
 # Utils
 gem 'breadcrumbs_on_rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'searchkick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

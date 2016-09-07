@@ -2,7 +2,7 @@
   <div class="row">
     <% group.each do |video| %>
       <% if video %>
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4">
           <%= link_to video_path(video) do %>
             <%= render 'video_box', video: video %>
           <% end %>

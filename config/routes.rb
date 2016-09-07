@@ -35,5 +35,5 @@ Rails.application.routes.draw do
     end
   end
 
-  mount Rop::Engine, at: '/guides', as: 'guides'
+  # mount Rop::Engine, at: '/guides', as: 'guides'
 end

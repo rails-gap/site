@@ -1,11 +1,3 @@
-GIT
-  remote: git@github.com:rails-gap/rop.git
-  revision: f4e840ae1a34a18c6605b99241650723976a60f4
-  branch: develop
-  specs:
-    rop (0.0.1)
-      rails (~> 4.2.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -95,6 +87,14 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    elasticsearch (2.0.0)
+      elasticsearch-api (= 2.0.0)
+      elasticsearch-transport (= 2.0.0)
+    elasticsearch-api (2.0.0)
+      multi_json
+    elasticsearch-transport (2.0.0)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.6.0)
     faraday (0.9.2)
@@ -246,6 +246,10 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    searchkick (1.3.4)
+      activemodel
+      elasticsearch (>= 1)
+      hashie
     sexp_processor (4.6.1)
     simplecov (0.11.2)
       docile (~> 1.1.0)
@@ -316,12 +320,12 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.5)
   rails4-autocomplete
-  rop!
   royce
   rspec-rails (~> 3.0)
   rubocop (~> 0.42.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  searchkick
   simplecov
   simplecov-rcov
   spring
