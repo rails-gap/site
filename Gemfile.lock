@@ -6,14 +6,6 @@ GIT
     rop (0.0.1)
       rails (~> 4.2.5)
 
-GIT
-  remote: git@github.com:rails-gap/screencasts.git
-  revision: 6771844f09607f07bff4f2f2c43a67a854198b0a
-  branch: develop
-  specs:
-    screencasts (0.0.1)
-      rails (~> 4.2.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -135,14 +127,14 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
-    mime-types (2.99)
+    mime-types (2.99.1)
     mini_portile2 (2.0.0)
-    minitest (5.8.3)
+    minitest (5.8.4)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.4.2)
-    nokogiri (1.6.7.1)
+    nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
@@ -197,10 +189,10 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.2)
+    rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails-jquery-autocomplete (1.0.3)
-      rails (>= 3.2)
+    rails4-autocomplete (1.1.1)
+      rails (>= 3.0)
     railties (4.2.5)
       actionpack (= 4.2.5)
       activesupport (= 4.2.5)
@@ -270,7 +262,7 @@ GEM
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.0)
+    sprockets-rails (3.0.3)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
@@ -295,11 +287,14 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     will_paginate (3.1.0)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   better_errors
   bootstrap-sass (~> 3.3.6)
   brakeman
@@ -320,13 +315,12 @@ DEPENDENCIES
   pundit
   quiet_assets
   rails (= 4.2.5)
-  rails-jquery-autocomplete
+  rails4-autocomplete
   rop!
   royce
   rspec-rails (~> 3.0)
   rubocop (~> 0.42.0)
   sass-rails (~> 5.0)
-  screencasts!
   sdoc (~> 0.4.0)
   simplecov
   simplecov-rcov
@@ -335,6 +329,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   will_paginate
+  will_paginate-bootstrap
 
 BUNDLED WITH
    1.12.5

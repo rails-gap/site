@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   belongs_to :personnel_manager, class_name: 'User'
   has_many :subordinates, class_name: 'User', foreign_key: 'personnel_manager_id'
   has_many :practices_leading, class_name: 'Practice', foreign_key: 'practice_lead_id'
+  has_many :videos
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -26,7 +27,7 @@ class User < ActiveRecord::Base
     message: "has invalid GAP account"
   }
 
-  scope :active, -> { where(active: 1) }
+  scope :active, -> { where(active: true) }
   scope :ordered, -> { order(:name, :last_name) }
 
   def password_required?

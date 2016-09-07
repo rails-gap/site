@@ -9,6 +9,8 @@ gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+# Use Autoprefix to add browser engine prefixes by default.
+gem 'autoprefixer-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -17,7 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'rails-jquery-autocomplete'
+gem 'rails4-autocomplete'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -42,11 +44,11 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 # Engines
 gem 'rop', git: 'git@github.com:rails-gap/rop.git', branch: 'develop'
-gem 'screencasts', git: 'git@github.com:rails-gap/screencasts.git', branch: 'develop'
 
 # Utils
 gem 'breadcrumbs_on_rails'
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
