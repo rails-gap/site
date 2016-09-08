@@ -49,7 +49,6 @@ gem 'will_paginate-bootstrap'
 gem 'searchkick'
 
 # Deploy
-gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -62,10 +61,10 @@ gem 'rails_12factor', group: :production
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development, :test do
-  # Use mysql as the database for Active Record
   gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
 
