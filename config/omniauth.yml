@@ -1,0 +1,7 @@
+development:
+  GOOGLE_CLIENT_ID: "478665436053-ffhgbkn043ob02epu21vossq6aphlknt.apps.googleusercontent.com"
+  GOOGLE_CLIENT_SECRET: "U_qrXkFuNMU3gzRXJbqkVpBz"
+
+production:
+  GOOGLE_CLIENT_ID: "478665436053-ffhgbkn043ob02epu21vossq6aphlknt.apps.googleusercontent.com"
+  GOOGLE_CLIENT_SECRET: "U_qrXkFuNMU3gzRXJbqkVpBz"

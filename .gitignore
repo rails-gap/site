@@ -1,5 +1,5 @@
 config/database.yml
-config/omniauth.yml
+## config/omniauth.yml
 
 coverage/*
 log/*
