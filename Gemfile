@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use mysql as the database for Active Record
@@ -51,6 +50,9 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'searchkick'
 
+# Deploy
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -59,6 +61,10 @@ gem 'searchkick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   gem 'byebug'
