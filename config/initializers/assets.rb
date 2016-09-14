@@ -7,9 +7,6 @@ Rails.application.config.assets.version = '1.0'
 
 # JS
 
-# Engines
-Rails.application.config.assets.precompile += %w(screencasts/*)
-
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 
