@@ -8,7 +8,7 @@ class Directory::PracticesController < ApplicationController
   end
 
   def show
-    @practice = Practice.find(params[:id])
+    @practice = Practice.includes(members: :position).find(params[:id])
     add_breadcrumb @practice.name, directory_practice_path(@practice)
   end
 

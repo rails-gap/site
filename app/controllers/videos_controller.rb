@@ -6,7 +6,7 @@ class VideosController < ApplicationController
   autocomplete :video, :name, full: true
 
   def index
-    @videos = Video.active.all.paginate(page: params[:page])
+    @videos = Video.active.all.includes(:user).paginate(page: params[:page])
   end
 
   def show

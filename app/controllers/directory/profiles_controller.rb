@@ -4,7 +4,7 @@ class Directory::ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.active.ordered.all
+    @users = User.active.ordered.includes(:position, :practices).all
   end
 
   def show
